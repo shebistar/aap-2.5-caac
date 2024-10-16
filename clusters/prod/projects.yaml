@@ -1,0 +1,15 @@
+---
+controller_configuration_projects_async_retries: 60
+controller_configuration_projects_async_delay: 5
+controller_projects:
+  - name: Demo-Project-Prod-HR-CaaC
+    scm_type: git
+    scm_url: <REPLACE>.git
+    scm_branch: main
+    scm_clean: true
+    description: Prod-HR-CaaC project
+    organization: Prod-HR-CaaC
+    wait: true
+    update_project: true
+    credential: prod-hr-github-token
+...
