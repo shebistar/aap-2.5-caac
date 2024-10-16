@@ -65,6 +65,15 @@
       tags:
         - credentials
 
+    - name: Add credentials types
+      ansible.builtin.include_role:
+        name: controller-credentials-types
+        apply:
+          tags: credentials-types
+      when: controller_credential_types is defined
+      tags:
+        - credentials-types
+
     - name: Add projects
       ansible.builtin.include_role:
         name: controller-projects

@@ -8,6 +8,7 @@ ansible-playbook platform_configure.yml -t teams
 ansible-playbook platform_configure.yml -t authenticator
 ansible-playbook platform_configure.yml -t authenticator-maps
 ansible-playbook platform_configure.yml -t credentials
+ansible-playbook platform_configure.yml -t credentials-types
 ansible-playbook platform_configure.yml -t projects
 ansible-playbook platform_configure.yml -t project-updates
 ansible-playbook platform_configure.yml -t inventories
