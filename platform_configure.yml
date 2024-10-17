@@ -119,3 +119,12 @@
       when: controller_templates is defined
       tags:
         - templates
+
+    - name: Add Workflow templates
+      ansible.builtin.include_role:
+        name: controller-workflow-job-templates
+        apply:
+          tags: workflow-templates
+      when: controller_workflows is defined
+      tags:
+        - workflow-templates

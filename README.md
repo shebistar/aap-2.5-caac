@@ -14,6 +14,7 @@ ansible-playbook platform_configure.yml -t project-updates
 ansible-playbook platform_configure.yml -t inventories
 ansible-playbook platform_configure.yml -t hosts
 ansible-playbook platform_configure.yml -t templates
+ansible-playbook platform_configure.yml -t workflow-templates
 ```
 
 NOTE: More updates will come soon

@@ -2,7 +2,7 @@
 - name: Ansible Platform LDAP configuration
   ansible.platform.authenticator:
     configuration:            "{{ __platform_authenticator_configuration_item.ldap | default(omit, true) }}"
-    name: "Corporate LDAP"
+    name: "{{ __platform_authenticator_configuration_item.name | mandatory }}"
     enabled: true
     type: 'ansible_base.authentication.authenticator_plugins.ldap'
     # Role Standard Options
