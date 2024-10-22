@@ -1,10 +1,10 @@
 ---
 - name: Ansible Platform LDAP configuration
   ansible.platform.authenticator:
-    configuration:            "{{ __platform_authenticator_configuration_item.ldap | default(omit, true) }}"
+    configuration:            "{{ __platform_authenticator_configuration_item.configuration | default(omit, true) }}"
     name: "{{ __platform_authenticator_configuration_item.name | mandatory }}"
     enabled: true
-    type: 'ansible_base.authentication.authenticator_plugins.ldap'
+    type: 'ansible_base.authentication.authenticator_plugins.{{ __platform_authenticator_configuration_item.type | mandatory }}'
     # Role Standard Options
     gateway_config_file:   "{{ gateway_config_file | default(omit, true) }}"
     gateway_hostname:          "{{ gateway_hostname | default(omit, true) }}"

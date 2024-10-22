@@ -1,7 +1,8 @@
 ---
 platform_authenticator_configuration:
   - name: "Corporate LDAP"
-    ldap:
+    type: ldap
+    configuration:
       SERVER_URI:
         - "ldap://<REPLACE>:389"
       BIND_DN: "uid=binduser,cn=users,cn=accounts,dc=<REPLACE>,dc=com"
@@ -23,4 +24,14 @@ platform_authenticator_configuration:
         first_name: "givenName"
         last_name: "sn"
         email: "mail"
+  - name: "OIDC"
+    type: 'oidc'
+    configuration:
+      #/.well-known/openid-configuration will append automatically - do not include in OIDC_ENDPOINT forward slash / at the end
+      OIDC_ENDPOINT: "https://<REPLACE>/realms/<REPLACE_REALM_NAME>"
+      KEY: "aap-oidc"
+      SECRET: "<REPLACE>"
+      JWT_ALGORITHMS:
+        - 'RS256' #add OIDC supported algorithm, can be multiple in that case will be tried
+
 ...
